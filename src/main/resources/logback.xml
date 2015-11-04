@@ -1,0 +1,22 @@
+<configuration>
+	
+  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{ISO8601} %-5p [%t] [%X{akkaSource}] [%c] - %m%n</pattern>
+    </encoder>
+  </appender>
+  
+  <appender name="TextFile" class="ch.qos.logback.core.FileAppender">
+    <append>false</append>
+    <file>logs/quantel.txt</file>
+    <encoder>
+      <pattern>%d{ISO8601} %-5p [%t] [%X{akkaSource}] [%c] - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="info">
+    <appender-ref ref="Console"/>
+    <appender-ref ref="TextFile"/>
+  </root>
+
+</configuration>
